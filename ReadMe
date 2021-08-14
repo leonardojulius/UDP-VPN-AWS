@@ -1,0 +1,30 @@
+https://christitus.com/openvpn-server/
+
+https://github.com/angristan/openvpn-install/blob/master/openvpn-install.sh
+
+sudo apt install openvpn
+
+wget https://raw.githubusercontent.com/angristan/openvpn-install/master/openvpn-install.sh
+Mark Executable
+chmod +x openvpn-install.sh
+
+When> 
+
+AUTO_INSTALL=y ./openvpn-install.sh
+
+if> 
+"TUN is not available"
+cd /dev
+mkdir net
+mknod net/tun c 100 200
+chmod 0666 /dev/net/tun
+cd
+
+if not >
+AUTO_INSTALL=y ./openvpn-install.sh
+
+wait for the installation finish....
+
+terminal>ll
+
+scp -i .ssh/aws-ec2.pem ubuntu@34.231.26.238:client.ovpn ~
