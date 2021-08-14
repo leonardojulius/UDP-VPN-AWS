@@ -27,4 +27,8 @@ wait for the installation finish....
 
 terminal>ll
 
-scp -i .ssh/aws-ec2.pem ubuntu@34.231.26.238:client.ovpn ~
+disconnect to instance
+
+
+
+scp -i .ssh/aws-ec2.pem ubuntu@34.231.26.238:client.ovpn ~ #save to desktop
